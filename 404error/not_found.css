@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #ffffffde;
+    font-family: "M PLUS Rounded 1c", system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    background-color: #242424;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vmin;
+    overflow: hidden;
+}
+
+p {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    text-align: center;
+}
+
+.goldenText {
+    background-attachment: fixed;
+    background-position: -100vw, 0;
+    background-size: 100vw 100vh;
+    background-color: #dba941;
+    background-image: linear-gradient(120deg, #dba941 45%, #fff9d6 50%, #dba941 55%);
+    background-clip: text;
+    color: transparent;
+    background-repeat: repeat;
+    animation: shimmer 3s infinite linear;
+    filter: drop-shadow(0 0 1rem #e6c25280);
+    text-align: center;
+    width: 100vw;
+}
+
+@keyframes shimmer {
+    100% {
+        background-position: 100vw 0;
+    }
+}
+
+.blank {
+    flex-grow: 1;
+    width: 100vw;
+    overflow: hidden;
+}
+
+@font-face {
+  font-family: "Saitamaar";
+  src: url("fonts/Saitamaar.woff2") format("woff2"),
+    url("fonts/Saitamaar.woff") format("woff"),
+    url("fonts/Saitamaar.ttf") format("ttf");
+  font-display: swap;
+}
+
+.Saitamaar {
+  font-family: "Saitamaar";
+  white-space: pre;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.busstop {
+    position: absolute;
+    background-color: #242424;
+}
+
+.bus {
+    transform: scaleX(-1) translateX(-100vw);
+}
+
+.movebus {
+    animation: bus 4s forwards;
+}
+
+@keyframes bus {
+    0% {
+        transform: scaleX(-1) translateX(-100vw);
+    }
+    100% {
+        transform: scaleX(-1) translateX(100vw);
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .title_container h1 {
+        font-size: 20vmin;
+    }
+
+    .title_container h2 {
+        font-size: 10vmin;
+    }
+
+    .message_container h3 {
+        font-size: 5vmin;
+    }
+
+    .message_container p {
+        font-size: 3vmin;
+    }
+
+    .blank {
+        display: none;
+    }
+
+    body {
+        justify-content: space-evenly;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .title_container h1 {
+        font-size: 8rem;
+    }
+
+    .title_container h2 {
+        font-size: 3rem;
+    }
+
+    .message_container h3 {
+        font-size: 2rem;
+    }
+
+    .message_container p {
+        font-size: 1rem;
+    }
+}
+
+:root {
+  --zoom-factor: 1;
+}
